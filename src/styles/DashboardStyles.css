@@ -1,0 +1,31 @@
+.dashboard-page {
+    padding: 2rem;
+  }
+  
+  .dashboard-page h1 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+  }
+  
+  .subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .dashboard-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  }

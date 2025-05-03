@@ -1,0 +1,30 @@
+.transactions-page {
+    padding: 2rem;
+  }
+  
+  .transactions-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .transactions-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .transactions-list {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  @media (max-width: 768px) {
+    .transactions-container {
+      grid-template-columns: 1fr;
+    }
+  }

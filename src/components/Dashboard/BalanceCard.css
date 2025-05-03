@@ -1,0 +1,47 @@
+.balance-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .balance-card h3 {
+    margin-top: 0;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .balance-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #4361ee;
+  }
+  
+  .balance-details {
+    color: #666;
+    font-size: 0.9rem;
+  }.balance-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .balance-card h3 {
+    margin-top: 0;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .balance-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #4361ee;
+  }
+  
+  .balance-details {
+    color: #666;
+    font-size: 0.9rem;
+  }
