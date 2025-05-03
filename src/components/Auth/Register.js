@@ -22,7 +22,7 @@ export default function Register() {
     <div className="auth-container">
       <div className="auth-image-section">
         <div className="auth-image-content">
-          <h2>Welcome to Credit Card Visualizer</h2>
+          <h2>Your Personal Expense Tracker</h2>
           <p>Create an account to track your spending, visualize your finances, and make smarter financial decisions.</p>
         </div>
       </div>
