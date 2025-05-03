@@ -23,8 +23,16 @@ body {
 
 .main-content {
   flex: 1;
-  padding: 2rem;
+  padding: 0rem 1rem;
 }
+
+/* Remove padding on smaller devices */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0;
+  }
+}
+
 
 /* Dashboard */
 .dashboard-grid {
@@ -77,14 +85,12 @@ body {
 /* Charts */
 .chart-container {
   background: white;
-  padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  margin-bottom: 1.5rem;
+  margin: 1rem;
 }
 
 .chart-container h3 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 1rem;
   color: var(--dark-color);
 }

@@ -16,8 +16,7 @@ export default function TransactionsPage() {
           <TransactionForm onSubmit={addTransaction} />
         </div>
         
-        <div className="transactions-list">
-          <h2>Transaction History</h2>
+        <div className="transactions-list-container">
           <TransactionList transactions={transactions} />
         </div>
       </div>

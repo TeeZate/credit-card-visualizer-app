@@ -1,5 +1,5 @@
 .analytics-page {
-    padding: 2rem;
+    padding: 1rem;
   }
   
   .analytics-page h1 {
@@ -17,13 +17,6 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-  }
-  
-  .chart-container {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
   
   .chart-container h3 {

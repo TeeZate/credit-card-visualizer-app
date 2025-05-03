@@ -1,0 +1,161 @@
+/* TransactionList.css - Making the transaction list scrollable */
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 600px; /* Set a maximum height */
+  overflow: hidden; /* Hide overflow initially */
+}
+
+.transactions-list h2 {
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+.transaction-items-container {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 0.5rem; /* Add some padding for the scrollbar */
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.transaction-item:hover {
+  background-color: #f8fafc;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-description {
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.25rem;
+}
+
+.transaction-category {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+
+.transaction-category::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.transaction-category.food::before {
+  background-color: #f59e0b;
+}
+
+.transaction-category.transport::before {
+  background-color: #3b82f6;
+}
+
+.transaction-category.shopping::before {
+  background-color: #ec4899;
+}
+
+.transaction-category.entertainment::before {
+  background-color: #8b5cf6;
+}
+
+.transaction-category.bills::before {
+  background-color: #ef4444;
+}
+
+.transaction-category.other::before {
+  background-color: #6b7280;
+}
+
+.transaction-amount {
+  font-weight: 600;
+}
+
+.transaction-amount.expense {
+  color: #ef4444;
+}
+
+.transaction-amount.income {
+  color: #10b981;
+}
+
+/* Empty state styling */
+.empty-transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty-transactions svg {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.empty-transactions h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.empty-transactions p {
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .transactions-list {
+    max-height: 400px; /* Smaller height on mobile */
+  }
+}
+
+/* Custom scrollbar styling */
+.transaction-items-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transaction-items-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.transaction-items-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+.transaction-items-container::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}

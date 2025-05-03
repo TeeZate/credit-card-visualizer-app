@@ -2,6 +2,7 @@
 import { useState, useContext } from 'react';
 import { TransactionContext } from '../../context/TransactionContext';
 import Button from '../UI/Button';
+import '../../styles/TransactionForm.css';
 
 export default function TransactionForm() {
   const { addTransaction } = useContext(TransactionContext);
@@ -26,23 +27,32 @@ export default function TransactionForm() {
     });
   };
 
+  const handleTypeChange = (type) => {
+    setFormData({...formData, type});
+  };
+
   return (
     <form onSubmit={handleSubmit} className="transaction-form">
-      <div className="form-group">
-        <label>Type</label>
-        <select 
-          value={formData.type}
-          onChange={(e) => setFormData({...formData, type: e.target.value})}
+      <div className="type-selector">
+        <div 
+          className={`type-option ${formData.type === 'expense' ? 'active expense' : ''}`}
+          onClick={() => handleTypeChange('expense')}
         >
-          <option value="expense">Expense</option>
-          <option value="income">Income</option>
-        </select>
+          Expense
+        </div>
+        <div 
+          className={`type-option ${formData.type === 'income' ? 'active income' : ''}`}
+          onClick={() => handleTypeChange('income')}
+        >
+          Income
+        </div>
       </div>
       
       <div className="form-group">
         <label>Description</label>
         <input 
           type="text" 
+          placeholder="What was this transaction for?"
           value={formData.description}
           onChange={(e) => setFormData({...formData, description: e.target.value})}
           required
@@ -54,13 +64,14 @@ export default function TransactionForm() {
         <input 
           type="number" 
           step="0.01"
+          placeholder="0.00"
           value={formData.amount}
           onChange={(e) => setFormData({...formData, amount: e.target.value})}
           required
         />
       </div>
       
-      <div className="form-group">
+      <div className="form-group category-select">
         <label>Category</label>
         <select 
           value={formData.category}

@@ -1,0 +1,199 @@
+/* TransactionForm.css - Simple and practical styling with mobile optimizations */
+
+.transaction-form {
+    background-color: white;
+    padding: 1.25rem;
+  }
+  
+  .transaction-form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .transaction-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.5rem;
+  }
+  
+  .transaction-form input,
+  .transaction-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease;
+    /* Improve touch target size on mobile */
+    min-height: 44px;
+  }
+  
+  .transaction-form input:focus,
+  .transaction-form select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+  }
+  
+  .transaction-form input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none; /* Modern browsers */
+  }
+  
+  .transaction-form input[type="number"]::-webkit-outer-spin-button,
+  .transaction-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Type selector styling */
+  .transaction-form .type-selector {
+    display: flex;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .transaction-form .type-option {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    cursor: pointer;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+    /* Improve touch target size on mobile */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .transaction-form .type-option.active.expense {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    font-weight: 600;
+  }
+  
+  .transaction-form .type-option.active.income {
+    background-color: #dcfce7;
+    color: #15803d;
+    font-weight: 600;
+  }
+  
+  /* Category styling */
+  .transaction-form .category-select {
+    position: relative;
+  }
+  
+  .transaction-form .category-select select {
+    padding-right: 2rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  
+  /* Submit button styling */
+  .transaction-form button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+    /* Improve touch target size on mobile */
+    min-height: 44px;
+  }
+  
+  .transaction-form button[type="submit"]:hover {
+    background-color: #2563eb;
+  }
+  
+  .transaction-form button[type="submit"]:active {
+    transform: translateY(1px);
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .transaction-form {
+      padding: 1rem;
+    }
+    
+    .transaction-form .form-group {
+      margin-bottom: 0.875rem;
+    }
+    
+    .transaction-form input,
+    .transaction-form select,
+    .transaction-form button[type="submit"] {
+      /* Increase touch target size even more on small screens */
+      min-height: 48px;
+      font-size: 1rem;
+    }
+    
+    .transaction-form .type-option {
+      min-height: 48px;
+      padding: 0.875rem;
+    }
+  }
+  
+  /* Small mobile screens */
+  @media (max-width: 480px) {
+    .transaction-form label {
+      font-size: 0.85rem;
+    }
+    
+    .transaction-form input,
+    .transaction-form select {
+      padding: 0.7rem;
+    }
+    
+    /* Make type selector more prominent on small screens */
+    .transaction-form .type-selector {
+      margin-bottom: 1.25rem;
+    }
+    
+    .transaction-form .type-option {
+      font-weight: 500;
+    }
+  }
+  
+  /* Fix for iOS Safari input styling */
+  @supports (-webkit-touch-callout: none) {
+    .transaction-form input,
+    .transaction-form select {
+      font-size: 16px; /* Prevents zoom on focus in iOS */
+    }
+  }
+  
+  /* Improved sticky form for mobile when scrolling */
+  @media (max-width: 768px) {
+    .transactions-page .transactions-container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .transaction-form {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin-bottom: 1rem;
+      background-color: white;
+    }
+    
+    /* Ensure content below the form is visible */
+    .transactions-list {
+      margin-top: 1rem;
+    }
+  }
